@@ -8,7 +8,24 @@
 </head>
 
 <body>
+    <input type="text" id="temperatur" name="temperatur" placeholder="Skriv temperatur i Celsius">
+    <button onclick="beregn()">Beregn verdiene</button>
+    <div id="output"></div>
 
+    <script>
+        function beregn() {
+
+            let temperatur = parseFloat(document.getElementById("temperatur").value);
+
+            let fahrenheit = temperatur * 1.8 + 32;
+            let kelvin = temperatur + 273.15;
+
+            let svar = `Temperaturen fra celsius til fahrenheit er ${fahrenheit}, og temperaturen fra celsius til kelvin er ${kelvin}`;
+
+            document.getElementById("output").innerHTML = svar;
+
+        }
+    </script>
 </body>
 
 </html>
