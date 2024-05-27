@@ -6,6 +6,22 @@
     <title>Temperatur-konverterer</title>
 </head>
 <body>
+    <input type="text" id="temperatur" name="temperatur" placeholder="Skriv temperatur i Fahrenheit">
+    <button onclick="beregn()">Beregn verdier</button>
+    <div id="output"></div>
 
+    <script>
+        function beregn() {
+
+        let temperatur = document.getElementById("temperatur").value; 
+
+        let celsius = (temperatur-32)*5/9
+        let kelvin = (temperatur-32)*5/9+273.15 
+
+        let svar = `Temperaturen i celsius er ${celsius}, og temperaturen i Kelvin er ${kelvin}`;
+
+        document.getElementById("output").innerHTML=svar;
+        }
+    </script>
 </body>
 </html>
