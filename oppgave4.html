@@ -8,7 +8,22 @@
 </head>
 
 <body>
+    <input type="text" id="fart" name="fart" placeholder="Skriv inn fart i km/t">
+    <button onclick="beregn()">Submit</button>
+    <div id="output"></div>
 
+    <script>
+        function beregn() {
+
+            let fart = document.getElementById("fart").value;
+
+            let kmt = fart * 0.6214
+
+            let svar = `Det gitte svaret tilsvarer ${kmt} mph`;
+
+            document.getElementById("output").innerHTML = svar;
+        }
+    </script>
 </body>
 
 </html>
