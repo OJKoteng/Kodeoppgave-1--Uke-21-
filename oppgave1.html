@@ -6,21 +6,22 @@
     <title>Leke med tall</title>
 </head>
 <body>
-    <input type="number" id="numberInput" name="numberInput" placeholder="Skriv inn ett tall">
-    <button type="button" onclick="readNumber()">Submit</button>
-    <div id="result"></div>
+    <input type="text" id="tall" name="tall" placeholder="Skriv inn et tall">
+    <button onclick="beregn();">Beregn verdier</button>
+    <div id="output"></div>
 
     <script>
-        function readNumber() {
-            // Skaffer input elementet 
-            let numberInput = document.getElementById('numberInput');
-            
-            // Leser verdien fra input elementet 
-            let numberValue = numberInput.value;
-            
-            // Viser tallet, eller utfører handlingen til tallet du skriver inn
-            document.getElementById('result').innerHTML = 'Du skrev ' + numberValue;
-        }
+        // Her lager man en variabel som henter tallet brukeren taster inn 
+        let tall = document.getElementById("tall").value;
+
+        //Her opprettes det nye variabler basert på variabelen hentet ovenfor
+        let halvpart = tall / 2; 
+        let dobbelt = tall * 2; 
+        let trippel = tall * 3; 
+        let kvadrat = tall * tall; 
+
+        //Her opprettes det en svar variabel og deretter kommer det en tekst-streng som skal vises for brukeren
+        
     </script>
 </body>
 </html>
