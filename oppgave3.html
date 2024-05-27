@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tids konverterer</title>
+</head>
+
+<body>
+    <input type="text" id="tid" name="tid" placeholder="Skriv inn antall sekunder">
+    <button onclick="konvertertid()">Submit</button>
+    <div id="output"></div>
+
+    <script>
+
+        function konvertertid() {
+
+            let timer = tid / 3600;
+            let minutter = tid / 60
+            let sekunder = tid * 1
+
+            let svar = `Det gitte antallet sekunder tilsvarer ${timer} timer, ${minutter} og ${sekunder} sekunder.`;
+
+            document.getElementById("output").innerHTML = svar;
+        }
+    </script>
+</body>
+
+</html>
