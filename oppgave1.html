@@ -6,6 +6,21 @@
     <title>Leke med tall</title>
 </head>
 <body>
-<input type="number" id="numberImput" name="numberImput" placeholder="Skriv inn ett tall">
+    <input type="number" id="numberInput" name="numberInput" placeholder="Skriv inn ett tall">
+    <button type="button" onclick="readNumber()">Submit</button>
+    <div id="result"></div>
+
+    <script>
+        function readNumber() {
+            
+            let numberInput = document.getElementById('numberInput');
+            
+            
+            let numberValue = numberInput.value;
+            
+            
+            document.getElementById('result').innerHTML = 'Du skrev ' + numberValue;
+        }
+    </script>
 </body>
 </html>
