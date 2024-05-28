@@ -11,14 +11,40 @@
     <h1>BMI kalkulator</h1>
 
     <section>
-        <input type="text" id="høyde" name="høyde" placeholder="Skriv inn høyden din i cm" required>
+        <input type="text" id="høyde" name="høyde" placeholder="Skriv høyden din i meter" required>
         <br><br>
     </section>
 
     <section>
-        <input type="text" id="høyde" name="høyde" placeholder="Skriv inn vekten din i kg" required>
+        <input type="text" id="vekt" name="vekt" placeholder="Skriv vekten din i kg" required>
         <br><br>
     </section>
+
+    <section>
+        <button onclick="beregn()">Beregn</button>
+        <p id="bmi"></p>
+    </section>
+
+    <script>
+
+        function beregn() {
+
+            let høyde = document.getElementById("høyde").value;
+            let vekt = document.getElementById("vekt").value;
+
+            let utregning = vekt / (høyde * høyde)
+
+            // Her bruker jeg funksjon .toFixed(2) for å sørge for å kun få to desimaltall for å gjøre det mer leselig
+
+            let svar = `Basert på din høyde ${høyde * 100} cm, og din kroppsvekt ${vekt} kg, er din BMI ${utregning.toFixed(2)}`;
+
+            document.getElementById("bmi").innerHTML = svar;
+
+        }
+
+
+    </script>
+
 </body>
 
 </html>
