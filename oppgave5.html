@@ -9,6 +9,46 @@
 
 <body>
 
+    <section>
+        <h1>E-post generator</h1>
+
+        <form id="epostskjema">
+            <input type="text" id="fornavn" name="fornavn" placeholder="Skriv inn fornavn" required>
+            <br><br>
+
+            <input type="text" id="mellomnavn" name="mellomnavn" placeholder="Skriv inn mellomnavn" required>
+            <br><br>
+
+            <button onclick="generer()">Generer e-post</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Din nye e-post</h2>
+        <p id="ny-epost"></p>
+    </section>
+
+    <script>
+        function generer() {
+            // Her henter vi verdiene, og trim() etter value gjør slik at man unngår at brukeren får uheldige mellomrom når de skriver navnet sitt
+            let fornavn = document.getElementById("fornavn").value.trim();
+            let mellomnavn = document.getElementById("mellomnavn").value.trim();
+
+            if (fornavn && mellomnavn) {
+
+                let epost = `${fornavn.tolowercase()}.${mellomnavn.tolowercase()}@live.com`;
+
+                document.getElementById("ny-epost").innerHTML = epost;
+
+            } else {
+                document.getElementById("ny-epost").innerHTML = `Vennligst fyll inn begge feltene`;
+            }
+
+        }
+    </script>
+
+
+
 </body>
 
 </html>
