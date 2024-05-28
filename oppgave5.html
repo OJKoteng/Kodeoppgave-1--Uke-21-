@@ -12,15 +12,15 @@
     <section>
         <h1>E-post generator</h1>
 
-        <form id="epostskjema">
-            <input type="text" id="fornavn" name="fornavn" placeholder="Skriv inn fornavn" required>
-            <br><br>
 
-            <input type="text" id="mellomnavn" name="mellomnavn" placeholder="Skriv inn mellomnavn" required>
-            <br><br>
+        <input type="text" id="fornavn" name="fornavn" placeholder="Skriv inn fornavn" required>
+        <br><br>
 
-            <button onclick="generer()">Generer e-post</button>
-        </form>
+        <input type="text" id="mellomnavn" name="mellomnavn" placeholder="Skriv inn mellomnavn" required>
+        <br><br>
+
+        <button onclick="generer()">Generer e-post</button>
+
     </section>
 
     <section>
@@ -34,9 +34,11 @@
             let fornavn = document.getElementById("fornavn").value.trim();
             let mellomnavn = document.getElementById("mellomnavn").value.trim();
 
+            //Her danner jeg verdiene med .toLowerCase() for å sørge for at du ikke får store bokstaver i e-posten, og bruker if/else statements for å generere to svar. Det ene svaret gir deg e-posten om begge input feltene er fylt inn, og det andre oppretter en feilmelding om du bare har fylt ut ett eller ingen felt. 
+
             if (fornavn && mellomnavn) {
 
-                let epost = `${fornavn.tolowercase()}.${mellomnavn.tolowercase()}@live.com`;
+                let epost = `${fornavn.toLowerCase()}.${mellomnavn.toLowerCase()}@live.com`;
 
                 document.getElementById("ny-epost").innerHTML = epost;
 
