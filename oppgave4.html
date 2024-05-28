@@ -12,6 +12,10 @@
     <button onclick="beregn()">Submit</button>
     <div id="output"></div>
 
+    <input type="text" id="hastighet" name="hastighet" placeholder="Skriv inn fart i mph">
+    <button onclick="kalkuler()">Submit</button>
+    <div id="produksjon"></div>
+
     <script>
         function beregn() {
 
@@ -22,6 +26,17 @@
             let svar = `Det gitte svaret tilsvarer ${kmt} mph`;
 
             document.getElementById("output").innerHTML = svar;
+        }
+
+        function kalkuler() {
+
+            let hastighet = document.getElementById("hastighet").value;
+
+            let mph = hastighet * 1.6093
+
+            let svar = `Det gitte svaret tilsvarer ${mph} kmt`;
+
+            document.getElementById("produksjon").innerHTML = svar;
         }
     </script>
 </body>
