@@ -15,7 +15,44 @@
         <p id="output"></p>
     </section>
 
+    <script>
 
+        function beregn() {
+
+            let alder = document.getElementById("alder").value;
+
+            alder = Number(alder);
+
+            let outputelement = document.getElementById("output");
+
+            if (isNaN(alder)) {
+
+                outputelement.textContent = "Vennligst skriv inn et gyldig tall."; return;
+
+            }
+            if (alder = 0) {
+                outputelement.textContent = "Du er ikke født enda"
+                // >= Betyr større enn og tilsvarende tallverdi. Slik at alle tall over 150 samt 150 gir gitt svar. 
+            } else if (alder >= 150) {
+                outputelement.textContent = "Du er et mirakel!"
+            }
+            else if (alder >= 67) {
+                outputelement.textContent = "Du er pensjonist"
+            }
+            else if (alder >= 18) {
+                outputelement.textContent = "Du er myndig"
+            }
+            // && forsikrer at koden kjører om begge disse forholdene i koden under er sann. Altså om alder er større enn 0, eller om alder er mindre enn 18.
+            else if (alder > 0 && alder <= 18) {
+                outputelement.textContent = "Du er ikke myndig!"
+            }
+            else {
+                outputelement.textContent = "Du er ikke født enda..."
+            }
+
+        }
+
+    </script>
 
 
 </body>
