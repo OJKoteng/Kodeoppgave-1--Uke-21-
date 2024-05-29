@@ -30,7 +30,8 @@
                 outputelement.textContent = "Vennligst skriv inn et gyldig tall."; return;
 
             }
-            if (alder = 0) {
+            // === Sjekker om verdiene på begge sidene er likeverdige.
+            if (alder === 0) {
                 outputelement.textContent = "Du er ikke født enda"
                 // >= Betyr større enn og tilsvarende tallverdi. Slik at alle tall over 150 samt 150 gir gitt svar. 
             } else if (alder >= 150) {
